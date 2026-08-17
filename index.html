@@ -2,18 +2,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login e Cadastro</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/login-cadastro.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     
     <div class="container">
-        <h1>Login</h1>
         <form class="login-cadastro">
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
+            <h1>Login</h1>
+            <div class="campos">
+                <input class="email-login" type="email" placeholder="Email" required>
+                <input class="senha-login" type="password" placeholder="Senha" required>
+            </div>
+            <button class="botao" type="submit">Entrar</button>
+            <p>Ainda não tem uma conta? <a href="cadastrar.html">Cadastre-se aqui</a></p>
         </form>
-        <p>Ainda não tem uma conta? <a href="cadastrar.html">Cadastre-se aqui</a></p>
     </div>
 
 </body>
