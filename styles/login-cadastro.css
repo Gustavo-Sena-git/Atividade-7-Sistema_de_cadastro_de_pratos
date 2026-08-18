@@ -19,6 +19,9 @@ body{
     padding: 20px;
     text-align: center;
     border-radius: 10px;
+
+    outline: 2px solid #2a750d;
+    outline-offset: 3px;
 }
 
 .campos{
@@ -34,6 +37,7 @@ body{
     margin-top: 10%;
 
     border-radius: 5px;
+    border: none;
 }
 
 .container{
@@ -58,7 +62,7 @@ body{
 }
 
 .email-login{
-    margin: 15% 0;
+    margin: 8% 0;
 }
 
 .senha-login{
