@@ -3,22 +3,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles/login-cadastro.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     
-    <div class="container">
-        <form class="login-cadastro">
-            <h1>Login</h1>
-            <div class="campos">
-                <input class="email-login" type="email" placeholder="Email" required>
-                <input class="senha-login" type="password" placeholder="Senha" required>
-            </div>
-            <button class="botao" type="submit">Entrar</button>
-            <p>Ainda não tem uma conta? <a href="cadastrar.html">Cadastre-se aqui</a></p>
-        </form>
-    </div>
+    <nav class="navbar">
+        <h3>Figueiro | Sena - Cucina italiana</h3>
+    </nav>
 
+    <header>
+        <h2 class="titulo">Pratos:</h2>
+    </header>
+
+    <main>
+
+        <div class="modificar">
+            <a class="a-adicionar-prato" href="">Adicionar prato</a>
+            <a href="">Editar prato</a>
+            <a href="">Remover prato</a>
+        </div>
+
+        <div class="pratos">
+            
+            <?php while ($prato = $resultado->fetch_assoc()) { ?>
+
+                <div class="prato">
+                    <h3><?= $prato['nome'] ?></h3>
+
+                    <p><?= $prato['descricao'] ?></p>
+
+                    <span>R$ <?= $prato['preco'] ?></span>
+                </div>
+
+            <?php } ?>
+            
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Sempre faça tudo com amor</p>
+    </footer>
 </body>
 </html>
