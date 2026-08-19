@@ -1,6 +1,6 @@
-CREATE DATABASE restaurante;
+CREATE DATABASE sistema_restaurante_2026;
 
-USE restaurante;
+USE sistema_restaurante_2026;
 
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,

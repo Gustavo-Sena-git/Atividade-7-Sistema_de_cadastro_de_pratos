@@ -16,10 +16,11 @@
 
     $stmt->bind_param("ss", $nome, $email);
 
-    if($stmt->execute()){
-        echo"Usuario cadastrado";
-    } else{
-        echo"Erro de cadastro";
+    if ($stmt->execute()) {
+    header("Location: ../index.php"); // Use ../ para voltar para a raiz
+    exit();
+    } else {
+        echo "Erro de cadastro no banco: " . $stmt->error; // Exibe o erro exato do MySQLi
     }
 
     $stmt->close();

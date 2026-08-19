@@ -1,40 +1,37 @@
 <?php
-    require_once "../config/conexao.php";
+require_once "../config/conexao.php";
 
-    $nome = $_POST["nome"];
-    $descricao = $_POST["descricao"];
-    $preco = $_POST["preco"];
-    $categoria = $_POST["categoria"];
-    $usuario_id = $_POST["usuario_id"];
+$nome       = $_POST["nome"] ?? '';
+$descricao  = $_POST["descricao"] ?? '';
+$preco      = $_POST["preco"] ?? '';
+$categoria  = $_POST["categoria"] ?? '';
+$usuario_id = $_POST["usuario_id"] ?? '';
+$preco = str_replace(',', '.', $preco);
 
-    if($nome == ""|| $email == ""){
-        echo "Preencha todos os campos";
-    }
+if (empty($nome) || empty($descricao) || empty($preco) || empty($categoria) || empty($usuario_id)) {
+    echo "Preencha todos os campos obrigatórios!";
+    exit;
+}
 
+$sql = "INSERT INTO pratos (nome, descricao, preco, categoria, usuario_id) VALUES (?, ?, ?, ?, ?)";
+$stmt = $conexao->prepare($sql);
 
-    $sql = "insert into pratos (nome, descricao, preco, categoria, usuario_id) values (?, ?, ?, ?, ?)";
+$stmt->bind_param(
+    "ssdsi", 
+    $nome,
+    $descricao,
+    $preco,
+    $categoria,
+    $usuario_id
+);
 
-    $stmt = $conexao->prepare($sql);
+if ($stmt->execute()) {
+    header("Location: ../index.php");
+    exit;
+} else {
+    echo "Erro ao cadastrar: " . $stmt->error;
+}
 
-
-    $stmt->bind_param(
-        "ssdsi", 
-        $nome,
-        $descricao,
-        $preco,
-        $categoria,
-        $usuario_id
-
-    );
-
-    if($stmt->execute()){
-        echo"Usuario cadastrado";
-    } else{
-        echo"Erro de cadastro";
-    }
-
-    $stmt->close();
-    $conexao->close();
-
-
+$stmt->close();
+$conexao->close();
 ?>
