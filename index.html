@@ -8,7 +8,9 @@
 <body>
     
     <nav class="navbar">
-        <h3>Figueiro | Sena - Cucina italiana</h3>
+        <a class="botao" href="cadastro.html">Cadastrar cliente</a>
+
+        <h3>Figueiró | Sena - Cucina italiana</h3>
     </nav>
 
     <header>
@@ -17,25 +19,74 @@
 
     <main>
 
-        <div class="modificar">
-            <a class="a-adicionar-prato" href="">Adicionar prato</a>
-            <a href="">Editar prato</a>
-            <a href="">Remover prato</a>
+       <div class="modificar">
+
+            <button type="button" onclick="abrirFormulario('novo')">
+                Adicionar prato
+            </button>
+        
+            <div id="novo" class="formulario">
+                <form>
+                    <h2>Novo prato</h2>
+                
+                    <label>Nome cliente:</label>
+                    <input class="imput" type="text" name="nome">
+                
+                    <label>Preço:</label>
+                    <input type="number" name="preco">
+                
+                    <label>Descrição:</label>
+                    <textarea name="descricao"></textarea>
+                
+                    <button type="submit">Salvar</button>
+                    <button type="button" onclick="fecharFormulario('novo')">
+                        Cancelar
+                    </button>
+                </form>
+            </div>
+
         </div>
 
+
         <div class="pratos">
+
+            <div class="prato">
+                <p>ID: </p>
+
+                <p>Nome: </p>
+
+                <p>Preço: </p>
+
+
+                <button type="button" onclick="abrirFormulario('editar')">
+                    Editar prato
+                </button>
             
-            <?php while ($prato = $resultado->fetch_assoc()) { ?>
-
-                <div class="prato">
-                    <h3><?= $prato['nome'] ?></h3>
-
-                    <p><?= $prato['descricao'] ?></p>
-
-                    <span>R$ <?= $prato['preco'] ?></span>
+                <div id="editar" class="formulario">
+                    <form>
+                        <h2>Editar prato</h2>
+                    
+                        <label>Nome:</label>
+                        <input class="imput" type="text" name="nome">
+                    
+                        <label>Preço:</label>
+                        <input type="number" name="preco">
+                    
+                        <label>Descrição:</label>
+                        <textarea name="descricao"></textarea>
+                    
+                        <button type="submit">Salvar</button>
+                        <button type="button" onclick="fecharFormulario('editar')">
+                            Cancelar
+                        </button>
+                    </form>
                 </div>
 
-            <?php } ?>
+                <button type="button">
+                    Excluir prato
+                </button>
+
+            </div>
             
         </div>
 
@@ -44,5 +95,18 @@
     <footer>
         <p>Sempre faça tudo com amor</p>
     </footer>
+
+    <script>
+
+        function abrirFormulario(id) {
+    document.getElementById(id).style.display = "block";
+    }
+
+    function fecharFormulario(id) {
+        document.getElementById(id).style.display = "none";
+    }
+
+    </script>
+
 </body>
 </html>

@@ -51,6 +51,8 @@ main{
 }
 
 .prato{
+    margin-top: 2%;
+
     background-color: rgb(178, 180, 148);
     padding: 0.5%;
 
@@ -72,4 +74,47 @@ footer{
     align-items: center;
 
     height: 10%;
+}
+
+.formulario {
+    display: none;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background-color: rgb(222, 224, 185);
+    padding: 30px;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+    z-index: 1000;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 8px;
+    border: 0;
+}
+
+.formulario button {
+    padding: 8px;
+    border: 0;
+    background-color: rgb(94, 15, 15);
+    color: rgb(222, 224, 185);
+}
+
+.botao{
+    position: absolute;
+    top: 2.1%;
+    left: 1%;
 }
