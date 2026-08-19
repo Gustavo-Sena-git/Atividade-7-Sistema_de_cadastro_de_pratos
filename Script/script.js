@@ -6,7 +6,7 @@ function preencherEditar(prato) {
         document.getElementById('editar-descricao').value = prato.descricao;
         document.getElementById('editar-categoria').value = prato.categoria;
         
-        // Exibe o modal na tela
+
         document.getElementById('editar').style.display = 'block';
     }
 
