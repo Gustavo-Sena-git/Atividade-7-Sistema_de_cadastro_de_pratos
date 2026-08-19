@@ -38,6 +38,13 @@
                 
                     <label>Descrição:</label>
                     <textarea name="descricao"></textarea>
+
+                    <label>Classe:</label>
+                        <select name="classe">
+                            <option value="principal">Principal</option>
+                            <option value="accompaniment">Acompanhamento</option>
+                            <option value="dessert">Sobremesa</option>
+                        </select>
                 
                     <button type="submit">Salvar</button>
                     <button type="button" onclick="fecharFormulario('novo')">
@@ -51,15 +58,35 @@
 
         <div class="pratos">
 
-            <div class="prato">
-                <p>Descrição: </p>
+            <div class="tabela">
+                <p>Nome:</p>
 
-                <p>Nome: </p>
+                <p>Prato: </p>
+
+                <p>Categoria:</p>
+
+                <p>Descrição:</p>
 
                 <p>Preço: </p>
+                
+            </div>
+
+            <div class="linha">
+                <div class="prato">
+                    <p>Cleber</p>
+
+                    <p>Lasanha</p>
+
+                    <p>Massa</p>
+
+                    <p>Alérgico a lactose</p>
+
+                    <p>100</p>
+
+                </div>
 
 
-                <button type="button" onclick="abrirFormulario('editar')">
+                <button class="editar" type="button" onclick="abrirFormulario('editar')">
                     Editar prato
                 </button>
             
@@ -75,18 +102,21 @@
                     
                         <label>Descrição:</label>
                         <textarea name="descricao"></textarea>
-                    
+                        <label>Classe:</label>
+                        <select name="classe">
+                            <option value="principal">Principal</option>
+                            <option value="accompaniment">Acompanhamento</option>
+                            <option value="dessert">Sobremesa</option>
+                        </select>
                         <button type="submit">Salvar</button>
                         <button type="button" onclick="fecharFormulario('editar')">
                             Cancelar
                         </button>
                     </form>
                 </div>
-
-                <button type="button">
+                <button class="editar" type="button">
                     Excluir prato
                 </button>
-
             </div>
             
         </div>
